@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ابلاغیه رسمی شماره ۰۰۷</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1d3a;--navy2:#1b2e57;--gold:#c9a45c;--ivory:#fbf7ec;--cream:#f3ead2;--red:#9b1c2c;--ink:#1d2340;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font-family:Vazirmatn,Tahoma,"Segoe UI",sans-serif;background:var(--navy);color:var(--ink);line-height:2;overflow-x:hidden}
+button{font-family:inherit;cursor:pointer}
+/* welcome */
+#welcome{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px;text-align:center;color:var(--ivory);background:radial-gradient(circle at 50% 35%,#24407a 0%,var(--navy) 65%);transition:opacity .9s,visibility .9s}
+#welcome.gone{opacity:0;visibility:hidden}
+.sp{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);opacity:0;animation:tw 7s infinite ease-in-out}
+@keyframes tw{0%,100%{opacity:0;transform:translateY(0)}50%{opacity:.8;transform:translateY(-30px)}}
+.ministry{font-weight:800;font-size:clamp(15px,3.6vw,22px);color:var(--gold);max-width:620px;line-height:1.8}
+.wtxt{font-size:clamp(17px,4vw,24px);font-weight:600;margin:0}
+.meta{font-size:14px;color:#d9dcec;line-height:1.9}
+.meta b{color:var(--gold)}
+.envwrap{perspective:900px;margin:30px 0 18px;transition:transform 1s,opacity .8s}
+.env{position:relative;width:min(300px,78vw);aspect-ratio:3/2;filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}
+.env>*{position:absolute}
+.eback{inset:0;background:#d9c28a;border-radius:6px}
+.letter{left:6%;right:6%;top:6%;bottom:6%;background:var(--ivory);border:2px solid var(--gold);border-radius:4px;color:var(--ink);font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:800;transition:transform 1.1s cubic-bezier(.5,0,.2,1),opacity .6s;z-index:2;text-align:center;padding:6px}
+.efront{inset:0;z-index:3;background:linear-gradient(135deg,#e7d3a0,#cdb274);clip-path:polygon(0 0,50% 55%,100 0,100% 100%,0 100%);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);border-radius:6px}
+.flap{left:0;right:0;top:0;height:60%;z-index:4;background:linear-gradient(#e3cd96,#c9ae6e);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s ease,z-index 0s .45s}
+.seal{left:50%;top:44%;width:46px;height:46px;margin:0 -23px;border-radius:50%;z-index:6;background:radial-gradient(circle at 35% 30%,#c4364a,var(--red));color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 3px 8px rgba(0,0,0,.5);transition:opacity .5s,transform .5s}
+.env.open .seal{opacity:0;transform:scale(1.5)}
+.env.open .flap{transform:rotateX(180deg);z-index:1}
+.env.out .letter{transform:translateY(-62%)}
+.env.big{transform:scale(1.15)}
+.env.big .letter{transform:translateY(-62%) scale(1.5);opacity:0}
+.btn{border:0;border-radius:12px;padding:10px 22px;font-weight:600;font-size:15px;transition:transform .2s,box-shadow .2s,opacity .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:disabled{opacity:.5;cursor:default}
+.gold{background:linear-gradient(135deg,#e4c880,var(--gold));color:var(--navy);box-shadow:0 6px 18px rgba(201,164,92,.4)}
+.gold.big{font-size:18px;font-weight:800;padding:14px 34px}
+.navy{background:var(--navy2);color:var(--ivory);border:1px solid var(--gold)}
+/* main */
+#main{display:none;background:linear-gradient(var(--navy),var(--navy2) 340px,#e9e1cb 340px);min-height:100vh;opacity:0;transition:opacity 1s}
+#main.show{display:block}#main.vis{opacity:1}
+.head{text-align:center;color:var(--ivory);padding:26px 16px 70px;position:relative}
+.head h1{margin:6px 0;font-size:clamp(18px,4.6vw,30px);color:var(--gold);font-weight:800;line-height:1.8}
+.head .sub{font-size:clamp(13px,3vw,17px)}
+.info{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-top:12px;font-size:13px;color:#dfe3f3}
+.info b{color:var(--gold)}
+.back{position:absolute;top:12px;right:12px;font-size:12px;padding:6px 12px;background:transparent;color:var(--gold);border:1px solid var(--gold);border-radius:20px}
+.title{text-align:center;color:var(--ivory);margin-top:-36px;padding:0 14px}
+.title h2{margin:0;font-size:clamp(22px,5.5vw,36px);font-weight:800;color:#fff}
+.title p{margin:4px auto 18px;max-width:640px;color:#e9dfc0;font-size:clamp(13px,3vw,16px)}
+.bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 12px 24px}
+.sheetwrap{padding:0 10px 30px}
+#doc{position:relative;max-width:800px;margin:0 auto;background:var(--ivory);border:3px double var(--gold);box-shadow:0 20px 50px rgba(15,29,58,.35);padding:clamp(22px,5vw,54px);overflow:hidden;animation:rise .9s both}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+#doc::before{content:"محرمانه ـ مخصوص مائده";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(34px,9vw,80px);font-weight:800;color:rgba(155,28,44,.06);transform:rotate(-28deg);pointer-events:none;white-space:nowrap}
+#doc>*{position:relative}
+.bsm{text-align:center;color:var(--gold);font-weight:800;font-size:18px}
+.dh{text-align:center;border-bottom:2px solid var(--gold);padding-bottom:12px;margin-bottom:14px}
+.dh h3{margin:0;font-size:clamp(16px,3.6vw,21px);color:var(--navy);font-weight:800}
+.dh p{margin:0;color:var(--navy2)}
+.dm{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 16px;font-size:14px;color:var(--navy2);margin-bottom:10px}
+.dm span:last-child{color:var(--red);font-weight:600}
+#doc h4{margin:22px 0 4px;font-size:18px;color:var(--navy);border-right:5px solid var(--gold);padding-right:10px;font-weight:800}
+#doc h2.n{text-align:center;font-size:clamp(20px,4.5vw,28px);margin:14px 0 0;color:var(--navy)}
+#doc p{margin:6px 0}
+#doc ol{margin:4px 0;padding-right:24px}
+#doc li{margin:2px 0}
+.subj{text-align:center;font-weight:600;color:var(--red);margin-bottom:12px!important}
+.verdict{margin-top:26px;background:var(--cream);border:1px solid var(--gold);border-radius:8px;padding:6px 16px 12px;scroll-margin-top:16px}
+.verdict h4{border:0!important;padding:0!important;color:var(--red)!important}
+.sign{margin-top:22px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.sign .sg{font-size:15px}
+.sline{display:block;width:170px;border-bottom:1px dashed var(--navy2);margin:18px 0 2px;font-family:cursive;color:var(--navy2);font-size:26px;height:34px;line-height:34px;text-align:center}
+.stamp{border:4px double var(--red);color:var(--red);border-radius:12px;padding:10px 14px;font-weight:800;font-size:clamp(14px,3.4vw,18px);text-align:center;max-width:250px;transform:rotate(-8deg);opacity:.88;line-height:1.7}
+.note{margin-top:18px;font-size:13px;color:#555;border-top:1px solid var(--gold);padding-top:8px}
+footer{text-align:center;background:var(--navy);color:#dfe3f3;padding:26px 16px 34px;font-size:13px}
+footer .stamp{margin:14px auto 0;font-size:12px;transform:rotate(-3deg);color:#e0788a;border-color:#e0788a}
+/* modal */
+#modal{position:fixed;inset:0;z-index:80;background:rgba(10,18,40,.7);display:none;align-items:center;justify-content:center;padding:18px}
+#modal.show{display:flex}
+.box{background:var(--ivory);border:3px double var(--gold);border-radius:14px;padding:26px 22px;max-width:420px;width:100%;text-align:center;animation:rise .5s both}
+.box .ic{font-size:40px}
+.spin{width:46px;height:46px;border:5px solid var(--cream);border-top-color:var(--gold);border-radius:50%;margin:8px auto;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.prog{height:8px;background:var(--cream);border-radius:8px;overflow:hidden;margin:10px 0}.prog i{display:block;height:100%;width:0;background:var(--gold);transition:width 2s}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:8px 16px;border-radius:20px;z-index:90;display:none;font-size:13px}
+@media print{
+@page{size:A4;margin:12mm}
+body,#main{background:#fff!important}
+#welcome,.head,.title,.bar,footer,#modal,#toast,.back{display:none!important}
+.sheetwrap{padding:0}#doc{box-shadow:none;animation:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+
+<section id="welcome" aria-label="صفحه خوشامدگویی">
+  <div class="ministry">وزارت امور محبت، قربون‌صدقه و رسیدگی به قهرهای دخترانه</div>
+  <p class="wtxt">سرکار خانم مائده،<br>یک ابلاغیه‌ی محرمانه برای شما صادر شده است.</p>
+  <div class="envwrap"><div class="env" id="env">
+    <div class="eback"></div>
+    <div class="letter">ابلاغیه رسمی<br>شماره ۰۰۷</div>
+    <div class="efront"></div>
+    <div class="flap"></div>
+    <div class="seal">♥</div>
+  </div></div>
+  <div class="meta">شماره پرونده: <b>۰۰۷/م/ق</b> &nbsp;|&nbsp; فرستنده: <b>پاچه‌خوار رسمی و دائمی شما</b> &nbsp;|&nbsp; وضعیت: <b>آماده‌ی ابلاغ</b></div>
+  <button class="btn gold big" id="openBtn">مشاهده و دریافت ابلاغیه</button>
+</section>
+
+<main id="main">
+  <div class="head">
+    <button class="btn back" id="backBtn">← بازگشت به پاکت نامه</button>
+    <div style="font-size:30px;color:var(--gold)">✦</div>
+    <h1>وزارت امور محبت، قربون‌صدقه و رسیدگی به قهرهای دخترانه</h1>
+    <div class="sub">اداره کل روابط عاطفی و حفظ صلح و صفا</div>
+    <div class="info"><span>شماره پرونده: <b>۰۰۷/م/ق</b></span><span>طبقه‌بندی: <b>محرمانه ـ مخصوص شخص مائده</b></span><span>وضعیت پرونده: <b>در انتظار صدور رأی نهایی</b></span></div>
+  </div>
+  <div class="title">
+    <h2>ابلاغیه رسمی شماره ۰۰۷</h2>
+    <p>موضوع: بررسی وضعیت قهر سرکار خانم مائده و درخواست بازگشت به شرایط عادی</p>
+  </div>
+  <div class="bar">
+    <button class="btn gold" id="bPdf">📄 دانلود نسخه PDF</button>
+    <button class="btn gold" id="bPrint">🖨 چاپ ابلاغیه</button>
+    <button class="btn gold" id="bPeace">💌 ثبت درخواست آشتی</button>
+    <button class="btn navy" id="bStat">🗂 بررسی وضعیت پرونده</button>
+    <button class="btn navy" id="bVerdict">⚖ مشاهده رأی نهایی</button>
+  </div>
+
+  <div class="sheetwrap"><article id="doc">
+    <div class="bsm">📜 بسمه‌تعالی</div>
+    <div class="dh"><h3>وزارت امور محبت، قربون‌صدقه و رسیدگی به قهرهای دخترانه</h3><p>اداره کل روابط عاطفی و حفظ صلح و صفا</p></div>
+    <div class="dm"><span>شماره پرونده: ۰۰۷/م/ق</span><span>طبقه‌بندی: محرمانه ـ مخصوص شخص مائده</span><span>وضعیت: در انتظار صدور رأی نهایی</span></div>
+    <h2 class="n">ابلاغیه رسمی شماره ۰۰۷</h2>
+    <p class="subj">موضوع: بررسی وضعیت قهر سرکار خانم مائده و درخواست بازگشت به شرایط عادی</p>
+    <p>با سلام و احترام؛</p>
+    <p>بدین‌وسیله به اطلاع می‌رساند، پیرو گزارش‌های متعدد واصله از سوی اینجانب، مبنی بر وقوع یک فقره قهر دخترانه از جانب جنابعالی، پرونده‌ای با موضوع فوق در این اداره تشکیل گردیده و جهت بررسی ابعاد مختلف موضوع به کمیسیون تخصصی ارجاع شده است.</p>
+    <p>پس از بررسی شواهد، مدارک و مستندات موجود، مشخص گردید که نامبرده از مدتی پیش وارد وضعیت قهر شده و علی‌رغم تلاش‌های مکرر شاکی جهت برقراری مجدد ارتباط دوستانه، همچنان بر موضع خود پافشاری می‌نماید.</p>
+    <p>با این حال، نظر به اینکه نامبرده از حقوق ویژه‌ای در زمینه ناز کردن، دریافت محبت و گوگولی بودن برخوردار است، کمیسیون از اتخاذ تصمیمات سخت‌گیرانه خودداری نموده و صرفاً به صدور این ابلاغیه بسنده می‌نماید.</p>
+
+    <h4>ماده ۱ ـ حقوق قانونی سرکار خانم مائده</h4>
+    <ol>
+      <li>حق ناز کردن در تمامی ساعات شبانه‌روز، بدون نیاز به ارائه دلیل یا مدرک.</li>
+      <li>حق دریافت قربون‌صدقه‌های نامحدود، به‌ویژه در خصوص چشم‌ها، ابروها، مژه‌ها، موها و سایر اجزای گوگولی وجود.</li>
+      <li>حق استفاده از عبارت‌های قانونی و معتبر نظیر «نههه»، «قهرم» و «نمی‌خوام».</li>
+      <li>حق زیبا و دوست‌داشتنی بودن، حتی در زمان قهر.</li>
+      <li>حق دریافت محبت و توجه بدون نیاز به ثبت درخواست کتبی.</li>
+    </ol>
+
+    <h4>ماده ۲ ـ وظایف شاکی</h4>
+    <ol>
+      <li>ارائه روزانه و مستمر قربون‌صدقه‌های لازم به سرکار خانم مائده.</li>
+      <li>ارائه نظرات کارشناسی در خصوص زیبایی ایشان، در صورت نیاز و حتی بدون درخواست قبلی.</li>
+      <li>شنیدن قهرهای دخترانه با حفظ آرامش و رعایت احترام کامل.</li>
+      <li>آماده‌باش دائمی جهت شنیدن صحبت‌ها، نازها و گلایه‌های ایشان.</li>
+      <li>جبران تمامی قربون‌صدقه‌های احتمالیِ عقب‌افتاده، بدون محدودیت زمانی.</li>
+    </ol>
+
+    <h4>ماده ۳ ـ مزایای ویژه پایان قهر</h4>
+    <p>در صورت اعلام رضایت سرکار خانم مائده و پایان یافتن قهر، مزایای زیر بلافاصله فعال خواهند شد:</p>
+    <ol>
+      <li>دریافت قربون‌صدقه‌های نامحدود و بدون سقف مصرف.</li>
+      <li>بازگشت تمامی پیام‌های محبت‌آمیز و تعریف‌های گوگولی.</li>
+      <li>بازگشت روابط دوستانه به بالاترین سطح ممکن.</li>
+      <li>اعطای عنوان افتخاری «زیباترین ساکن محله قربونت برم».</li>
+      <li>تمدید تمامی امتیازات ویژه و حقوق اختصاصی سرکار خانم مائده.</li>
+    </ol>
+
+    <h4>ماده ۴ ـ تبصره‌ها و توضیحات تکمیلی</h4>
+    <p>تبصره ۱: قهر کردن به هیچ عنوان موجب لغو محبت نخواهد شد.</p>
+    <p>تبصره ۲: شاکی مجاز است برای جلب رضایت سرکار خانم مائده از روش‌های خلاقانه، پیام‌های محبت‌آمیز و تصاویر اختصاصی استفاده نماید.</p>
+    <p>تبصره ۳: مشاهده هرگونه لبخند، خنده یا ارسال ایموجی از سوی سرکار خانم مائده به منزله پیشرفت مذاکرات صلح تلقی خواهد شد.</p>
+    <p>تبصره ۴: مدت‌زمان قهر نباید به‌گونه‌ای باشد که موجب آسیب به آرامش و حال خوب هیچ‌یک از طرفین شود.</p>
+    <p>تبصره ۵: حق ناز کردن و شیطنت‌های دخترانه سرکار خانم مائده در هر شرایطی محفوظ خواهد بود.</p>
+
+    <div class="verdict" id="verdict">
+      <h4>رأی نهایی کمیسیون رسیدگی به قهرهای دخترانه</h4>
+      <p>با توجه به بررسی‌های انجام‌شده، ضمن تأیید تمامی حقوق قانونی سرکار خانم مائده، مقرر می‌گردد شاکی همچنان به انجام وظایف محبت‌آمیز خود ادامه داده و درخواست پایان قهر و بازگشت به شرایط عادی را با رعایت کامل حق ناز کردن ایشان پیگیری نماید.</p>
+      <p>این ابلاغیه تا زمان اعلام رضایت سرکار خانم مائده معتبر خواهد بود.</p>
+    </div>
+
+    <div class="sign">
+      <div class="sg">
+        <p><b>صادرکننده:</b></p>
+        <p>پاچه‌خوار رسمی و دائمی سرکار خانم مائده</p>
+        <p>سمت: قربون‌صدقه‌گوی ارشد</p>
+        <p>مدت خدمت: تا اطلاع ثانوی</p>
+        <p>میزان محبت: خارج از محدوده محاسبات آماری</p>
+        <span class="sline">✍ امضا</span>
+      </div>
+      <div>
+        <p style="text-align:center;margin:0"><b>مهر رسمی:</b></p>
+        <div class="stamp">«قربونت برم، حالا بیا آشتی کنیم خوشگلم.»</div>
+      </div>
+    </div>
+    <p class="note"><b>توضیح پایانی:</b> این سند فاقد هرگونه اعتبار حقوقی و اداری بوده و صرفاً با هدف افزایش لبخند، ایجاد حال خوب و کاهش میزان قهرهای دخترانه صادر گردیده است.</p>
+  </article></div>
+
+  <footer>
+    <div>کلیه حقوق این سامانه متعلق به اداره کل امور قربون‌صدقه‌ها بوده و هرگونه استفاده از محبت‌های ارائه‌شده بدون ذکر منبع ممنوع است.</div>
+    <div class="stamp">تأیید شده توسط پاچه‌خوار رسمی و دائمی سرکار خانم مائده</div>
+  </footer>
+</main>
+
+<div id="modal"><div class="box" id="box"></div></div>
+<div id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var W=$('welcome'),M=$('main'),env=$('env'),busy=false;
+// sparkles
+for(var i=0;i<22;i++){var s=document.createElement('i');s.className='sp';s.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;animation-delay:'+Math.random()*7+'s;animation-duration:'+(5+Math.random()*5)+'s';W.appendChild(s)}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms)})}
+function toast(t){var e=$('toast');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(function(){e.style.display='none'},2800)}
+// envelope
+$('openBtn').onclick=async function(){
+  if(busy)return;busy=true;this.disabled=true;
+  env.classList.add('open');await wait(900);
+  env.classList.add('out');await wait(1200);
+  env.classList.add('big');await wait(900);
+  W.classList.add('gone');M.classList.add('show');window.scrollTo(0,0);
+  requestAnimationFrame(function(){requestAnimationFrame(function(){M.classList.add('vis')})});
+};
+$('backBtn').onclick=async function(){
+  M.classList.remove('vis');await wait(700);M.classList.remove('show');
+  env.className='env';$('openBtn').disabled=false;busy=false;
+  window.scrollTo(0,0);W.classList.remove('gone');
+};
+// modal
+function modal(h){$('box').innerHTML=h;$('modal').classList.add('show')}
+function closeM(){$('modal').classList.remove('show')}
+$('modal').onclick=function(e){if(e.target===this)closeM()};
+document.addEventListener('click',function(e){if(e.target.classList&&e.target.classList.contains('xm'))closeM()});
+$('bPeace').onclick=function(){modal('<div class="ic">💌</div><h3 style="margin:6px 0">ثبت شد</h3><p>درخواست شما با موفقیت به کمیسیون رسیدگی به قهرهای دخترانه ارسال شد.</p><button class="btn gold xm">باشه ♥</button>')};
+$('bStat').onclick=async function(){
+  modal('<div class="spin"></div><p id="st">در حال بررسی پرونده ۰۰۷/م/ق ...</p><div class="prog"><i id="pg"></i></div>');
+  await wait(50);$('pg').style.width='100%';
+  await wait(900);$('st').textContent='در حال تطبیق با بایگانی قربون‌صدقه‌ها ...';
+  await wait(1100);
+  modal('<div class="ic">🗂</div><p><b>پرونده همچنان در انتظار اعلام رضایت سرکار خانم مائده است.</b></p><button class="btn gold xm">متوجه شدم</button>');
+};
+$('bVerdict').onclick=function(){$('verdict').scrollIntoView({behavior:'smooth',block:'center'})};
+$('bPrint').onclick=function(){try{window.print()}catch(e){toast('چاپ در این نمایش در دسترس نیست')}};
+// PDF
+$('bPdf').onclick=async function(){
+  var b=this,old=b.textContent;b.disabled=true;b.textContent='در حال ساخت PDF ...';
+  try{
+    if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+    var el=$('doc');
+    var cv=await html2canvas(el,{scale:2,backgroundColor:'#fbf7ec',useCORS:true});
+    var J=window.jspdf.jsPDF,pdf=new J({unit:'mm',format:'a4'});
+    var pw=210,ph=297,iw=pw,ih=cv.height*iw/cv.width,pos=0,first=true;
+    var pxPage=Math.floor(cv.width*ph/pw);
+    while(pos<cv.height){
+      var h=Math.min(pxPage,cv.height-pos),c=document.createElement('canvas');
+      c.width=cv.width;c.height=h;
+      var x=c.getContext('2d');x.fillStyle='#fbf7ec';x.fillRect(0,0,c.width,h);x.drawImage(cv,0,pos,cv.width,h,0,0,cv.width,h);
+      if(!first)pdf.addPage();first=false;
+      pdf.addImage(c.toDataURL('image/jpeg',.92),'JPEG',0,0,pw,h*pw/cv.width);
+      pos+=h;
+    }
+    var buf=pdf.output('arraybuffer');
+    var dl=window.claude&&await window.claude.use('downloads');
+    if(dl){await dl.save({filename:'ebalaghiye-007.pdf',data:new Uint8Array(buf)});toast('PDF آماده شد')}
+    else{var u=URL.createObjectURL(new Blob([buf],{type:'application/pdf'})),a=document.createElement('a');a.href=u;a.download='ebalaghiye-007.pdf';document.body.appendChild(a);a.click();a.remove();toast('PDF دانلود شد')}
+  }catch(e){if(!e||e.code!=='declined')toast('ساخت PDF ممکن نشد؛ از «چاپ ابلاغیه» و گزینه ذخیره به‌صورت PDF استفاده کنید')}
+  b.disabled=false;b.textContent=old;
+};
+})();
+</script>
+</body>
+</html>
